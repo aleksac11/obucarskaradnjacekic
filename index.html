@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Obućarska radnja Čekić</title>
+<meta name="description" content="Zanatska obućarska radnja u Ćupriji — popravka obuće i nega kože.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #f4ece0;
+    --paper-2: #ece0cf;
+    --card: #fbf6ee;
+    --ink: #2c2016;
+    --ink-soft: #5f4c3a;
+    --leather: #7c4a24;
+    --leather-deep: #5c3418;
+    --brass: #a9803f;
+    --brass-bright: #c39a54;
+    --oxblood: #6e332a;
+    --line: #d9c8b2;
+    --shadow: 44 32 22;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1c1611;
+      --paper-2: #241b13;
+      --card: #251c14;
+      --ink: #f1e6d6;
+      --ink-soft: #c3ac92;
+      --leather: #c98a4f;
+      --leather-deep: #b3743a;
+      --brass: #cfa159;
+      --brass-bright: #e2bd77;
+      --oxblood: #c56a55;
+      --line: #3c2d20;
+      --shadow: 0 0 0;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1c1611;
+    --paper-2: #241b13;
+    --card: #251c14;
+    --ink: #f1e6d6;
+    --ink-soft: #c3ac92;
+    --leather: #c98a4f;
+    --leather-deep: #b3743a;
+    --brass: #cfa159;
+    --brass-bright: #e2bd77;
+    --oxblood: #c56a55;
+    --line: #3c2d20;
+    --shadow: 0 0 0;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    line-height: 1.08;
+    text-wrap: balance;
+    margin: 0;
+  }
+  p { margin: 0; }
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 22px;
+  }
+
+  /* ---------- Header ---------- */
+  header.site {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .navrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 12px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .brand .awl {
+    width: 34px; height: 34px; flex: none;
+  }
+  .brand-name {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: .01em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .brand-sub {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    white-space: nowrap;
+  }
+  nav.links {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+  }
+  nav.links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    color: var(--ink-soft);
+    transition: color .15s;
+  }
+  nav.links a:hover { color: var(--leather); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--leather);
+    color: #fbf6ee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background .15s, transform .1s;
+  }
+  .btn:hover { background: var(--leather-deep); }
+  .btn:active { transform: translateY(1px); }
+  .btn.ghost {
+    background: transparent;
+    color: var(--leather);
+    border-color: var(--leather);
+  }
+  :root[data-theme="dark"] .btn, :root:not([data-theme="light"]) .btn { color: #1c1611; }
+  @media (max-width: 760px) {
+    nav.links { display: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 40px;
+    align-items: center;
+    padding-block: 68px 60px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12.5px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px; height: 1px;
+    background: var(--brass);
+  }
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 68px);
+    letter-spacing: -0.015em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--leather);
+  }
+  .hero .lead {
+    margin-top: 22px;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .hero-cta {
+    margin-top: 32px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .hero-figure {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(120% 90% at 30% 20%, color-mix(in srgb, var(--brass) 22%, transparent), transparent 60%),
+      linear-gradient(160deg, var(--leather) 0%, var(--leather-deep) 62%, #3f2412 100%);
+    box-shadow: 0 30px 60px -30px rgb(var(--shadow) / .55);
+  }
+  .hero-figure .boot { position: absolute; inset: 0; }
+  .stamp {
+    position: absolute;
+    right: 16px; bottom: 16px;
+    width: 96px; height: 96px;
+    opacity: .92;
+  }
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 34px; padding-block: 44px; }
+    .hero-figure { max-width: 360px; }
+  }
+
+  /* ---------- Section frame ---------- */
+  section { padding-block: 66px; }
+  .sec-head { max-width: 60ch; margin-bottom: 40px; }
+  .sec-head .kicker {
+    font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--brass); font-weight: 600;
+  }
+  .sec-head h2 {
+    font-size: clamp(28px, 4.4vw, 40px);
+    margin-top: 12px;
+  }
+  .sec-head p {
+    margin-top: 16px; color: var(--ink-soft); font-size: 18px;
+  }
+
+  /* ---------- Services ---------- */
+  #usluge { background: var(--paper-2); border-block: 1px solid var(--line); }
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .svc {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .svc .ic {
+    width: 46px; height: 46px;
+    color: var(--leather);
+  }
+  .svc h3 { font-size: 24px; }
+  .svc p { color: var(--ink-soft); }
+  .svc ul {
+    list-style: none; margin: 6px 0 0; padding: 0;
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .svc li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 15.5px;
+  }
+  .svc li::before {
+    content: "";
+    margin-top: 9px;
+    width: 6px; height: 6px; flex: none;
+    background: var(--brass);
+    transform: rotate(45deg);
+  }
+  @media (max-width: 940px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Process ---------- */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding-top: 20px;
+    border-top: 2px solid var(--line);
+  }
+  .step .num {
+    font-family: "Fraunces", serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--brass);
+    letter-spacing: .12em;
+  }
+  .step h3 { font-size: 20px; margin: 10px 0 8px; }
+  .step p { color: var(--ink-soft); font-size: 15.5px; }
+  @media (max-width: 780px) { .steps { grid-template-columns: 1fr 1fr; gap: 26px 20px; } }
+  @media (max-width: 460px) { .steps { grid-template-columns: 1fr; } }
+
+  /* ---------- Craft / about ---------- */
+  #zanat { background: var(--paper-2); border-block: 1px solid var(--line); }
+  .craft {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .craft-figure {
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: linear-gradient(150deg, #402413, var(--oxblood));
+    box-shadow: 0 24px 48px -28px rgb(var(--shadow) / .5);
+  }
+  .craft-figure svg { width: 100%; height: 100%; display: block; }
+  .craft h2 { font-size: clamp(28px, 4.4vw, 38px); }
+  .craft p { color: var(--ink-soft); margin-top: 18px; }
+  .facts {
+    margin-top: 28px;
+    display: flex;
+    gap: 34px;
+    flex-wrap: wrap;
+  }
+  .fact .n {
+    font-family: "Fraunces", serif;
+    font-size: 34px; font-weight: 700;
+    color: var(--leather);
+    line-height: 1;
+  }
+  .fact .l {
+    font-size: 13px; letter-spacing: .05em;
+    color: var(--ink-soft); margin-top: 6px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 820px) { .craft { grid-template-columns: 1fr; gap: 30px; } .craft-figure { max-width: 320px; } }
+
+  /* ---------- Utisci ---------- */
+  #utisci { background: var(--paper-2); border-block: 1px solid var(--line); }
+  .sec-head.row {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 24px; max-width: none; flex-wrap: wrap;
+  }
+  .sec-head.row > div { max-width: 60ch; }
+  .rev-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .rev {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .stars { display: flex; gap: 3px; color: var(--brass); }
+  .stars svg { width: 18px; height: 18px; }
+  .rev blockquote {
+    margin: 0;
+    font-family: "Fraunces", serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .rev .who {
+    margin-top: auto;
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 6px;
+  }
+  .avatar {
+    width: 42px; height: 42px; flex: none;
+    border-radius: 50%;
+    background: var(--leather);
+    color: #fbf6ee;
+    display: grid; place-items: center;
+    font-family: "Fraunces", serif; font-weight: 700; font-size: 17px;
+  }
+  :root:not([data-theme="light"]) .avatar,
+  :root[data-theme="dark"] .avatar { color: #1c1611; }
+  .who .nm { font-weight: 600; font-size: 15.5px; }
+  .who .mt { font-size: 13px; color: var(--ink-soft); }
+  .all-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none; font-weight: 600; font-size: 15px;
+    color: var(--leather);
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 3px;
+    white-space: nowrap;
+    transition: gap .15s;
+  }
+  .all-link:hover { gap: 12px; }
+  @media (max-width: 860px) { .rev-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .rev-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Contact ---------- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .info-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 30px 28px;
+  }
+  .info-card h3 { font-size: 22px; margin-bottom: 18px; }
+  .info-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding-block: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .info-row:first-of-type { border-top: none; padding-top: 0; }
+  .info-row .ic { width: 22px; height: 22px; flex: none; color: var(--brass); margin-top: 2px; }
+  .info-row .k { font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+  .info-row .v { font-size: 17px; font-weight: 500; }
+  .copybtn {
+    margin-left: auto;
+    font-size: 12.5px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: border-color .15s, color .15s;
+    white-space: nowrap;
+  }
+  .copybtn:hover { border-color: var(--leather); color: var(--leather); }
+  .hours {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hours .hr {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 11px;
+    border-top: 1px solid var(--line);
+    font-variant-numeric: tabular-nums;
+  }
+  .hours .hr:first-child { border-top: none; }
+  .hours .hr.today {
+    color: var(--leather);
+    font-weight: 600;
+  }
+  .hours .day { color: var(--ink-soft); }
+  .hours .hr.today .day { color: var(--leather); }
+  .closed { color: var(--oxblood); font-weight: 600; }
+  @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Footer ---------- */
+  footer.site {
+    background: var(--leather-deep);
+    color: #eaddc9;
+    padding-block: 40px;
+    border-top: 1px solid var(--line);
+  }
+  :root:not([data-theme="light"]) footer.site,
+  :root[data-theme="dark"] footer.site { background: #150f0a; }
+  footer .frow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  footer .brand-name { color: #fbf6ee; }
+  footer .fnote { font-size: 13.5px; opacity: .8; }
+  footer a { color: #eaddc9; }
+
+  .note {
+    background: color-mix(in srgb, var(--brass) 16%, var(--card));
+    border: 1px dashed var(--brass);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-top: 30px;
+  }
+  .note strong { color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+  :focus-visible { outline: 2px solid var(--leather); outline-offset: 2px; border-radius: 4px; }
+  img { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap navrow">
+    <a class="brand" href="#pocetak" aria-label="Obućarska radnja Čekić — početak">
+      <svg class="awl" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="var(--leather)"/>
+        <path d="M13 27c3-9 7-14 14-16" stroke="var(--brass-bright)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 28l3-3 2 2-3 3-3 1z" fill="#fbf6ee"/>
+        <circle cx="26.5" cy="11.5" r="1.6" fill="#fbf6ee"/>
+      </svg>
+      <span class="brand-name">Obućarska radnja Čekić</span>
+    </a>
+    <span class="brand-sub">Nebojša i Milorad</span>
+    <nav class="links" aria-label="Glavna navigacija">
+      <a href="#usluge">Usluge</a>
+      <a href="#proces">Kako radimo</a>
+      <a href="#zanat">Zanat</a>
+      <a href="#utisci">Utisci</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn" href="#kontakt">Zakaži popravku</a>
+  </div>
+</header>
+
+<main id="pocetak">
+  <!-- HERO -->
+  <section class="hero" style="padding-block:0">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">Zanatska radnja od 1998.</span>
+        <h1>Vaše cipele <em>zaslužuju</em> još jednu sezonu.</h1>
+        <p class="lead">Popravka i nega obuće u srcu Ćuprije. Nov đon, potpetica, prošiv ili temeljna nega kože — sve radimo ručno. A tu su i kvalitetni kožni kaiševi za prodaju.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#kontakt">Dođite u radnju</a>
+          <a class="btn ghost" href="#usluge">Pogledajte usluge</a>
+        </div>
+      </div>
+      <div class="hero-figure" role="img" aria-label="Ilustracija kožne cipele na radnom stolu obućara">
+        <svg class="boot" viewBox="0 0 400 500" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#9a5f2e"/>
+              <stop offset="1" stop-color="#4d2c13"/>
+            </linearGradient>
+          </defs>
+          <!-- naziv radnje iznad prve linije -->
+          <text x="200" y="72" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="15" letter-spacing="4" fill="#e2bd77">OBUĆARSKA RADNJA</text>
+          <text x="200" y="108" text-anchor="middle" font-family="Fraunces, serif" font-size="34" font-weight="600" letter-spacing="8" fill="#e2bd77">ČEKIĆ</text>
+          <!-- ambient stitches -->
+          <g stroke="#c39a54" stroke-width="1.4" stroke-dasharray="5 7" opacity=".26">
+            <path d="M36 124h328M36 396h328"/>
+          </g>
+          <!-- shoe upper -->
+          <path d="M80 322 L80 262 C80 249 88 243 101 242 C123 240 141 247 153 253 C159 256 165 254 173 249 C203 234 253 239 303 265 C327 278 343 299 350 317 C352 323 349 327 342 327 L80 322 Z" fill="url(#lg)" stroke="#2c1a0d" stroke-width="3" stroke-linejoin="round"/>
+          <!-- quarter / lacing panel -->
+          <path d="M146 252 C150 268 150 292 148 320 L96 318 L92 262 C92 255 100 250 112 249 C126 248 140 250 146 252 Z" fill="#3a2210" opacity=".5"/>
+          <!-- toe-cap seam -->
+          <path d="M268 252 C282 272 286 298 279 320" stroke="#e2bd77" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/>
+          <!-- brogue perforations -->
+          <g fill="#e2bd77" opacity=".85">
+            <circle cx="286" cy="270" r="2"/><circle cx="290" cy="284" r="2"/><circle cx="290" cy="298" r="2"/><circle cx="287" cy="312" r="2"/>
+            <circle cx="301" cy="288" r="1.6"/><circle cx="313" cy="294" r="1.6"/><circle cx="325" cy="302" r="1.6"/>
+          </g>
+          <!-- eyelets + laces -->
+          <g>
+            <circle cx="118" cy="262" r="2.6" fill="#e2bd77"/><circle cx="140" cy="262" r="2.6" fill="#e2bd77"/>
+            <circle cx="116" cy="278" r="2.6" fill="#e2bd77"/><circle cx="138" cy="278" r="2.6" fill="#e2bd77"/>
+            <circle cx="115" cy="294" r="2.6" fill="#e2bd77"/><circle cx="137" cy="294" r="2.6" fill="#e2bd77"/>
+            <path d="M118 262l22 16M140 262l-24 16M116 278l22 16M138 278l-23 16" stroke="#f4ece0" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <!-- sole -->
+          <path d="M72 324 L344 324 C351 324 356 328 356 333 C356 339 350 342 343 342 L86 342 C78 342 72 338 72 332 Z" fill="#241a12" stroke="#150d07" stroke-width="1.5"/>
+          <!-- heel -->
+          <path d="M74 340 L100 340 L100 360 C100 362 98 364 96 364 L80 364 C76 364 74 362 74 358 Z" fill="#241a12"/>
+          <!-- welt stitch -->
+          <path d="M78 330 C160 336 280 336 348 330" stroke="#c39a54" stroke-width="1.6" stroke-dasharray="3 6" stroke-linecap="round" opacity=".8"/>
+          <!-- majstori ispod donjih crtica -->
+          <text x="200" y="434" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="27" font-weight="600" fill="#e2bd77">Za Vaš udoban korak</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- USLUGE -->
+  <section id="usluge">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Šta radimo</span>
+        <h2>Popravka, nega i prodaja</h2>
+        <p>Ne obećavamo sve i svašta. Radimo popravku obuće, negu kože i prodaju kožnih kaiševa — i to tako da se vratite kad zatreba ponovo.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M8 34c-1-14 3-22 12-25 4-1 7 1 8 6 1 6 2 9 8 12 8 4 12 8 12 15H12c-3 0-4-2-4-8z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+            <path d="M10 40h34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M18 16c1 6 3 10 8 13" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 4" stroke-linecap="round"/>
+          </svg>
+          <h3>Popravka obuće</h3>
+          <p>Od svakodnevnih patika do svečanih cipela i čizama — vraćamo ih u nošenje.</p>
+          <ul>
+            <li>Zamena đona i lepljenje potpuno odvojenog đona</li>
+            <li>Nove potpetice, štikle i gumeni flekovi</li>
+            <li>Prošivanje i ojačavanje šavova</li>
+            <li>Zamena rajsferšlusa i kopči</li>
+            <li>Sužavanje sara i sitne korekcije</li>
+          </ul>
+        </article>
+        <article class="svc">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M14 8h20l-2 14c-1 6-5 9-8 9s-7-3-8-9L14 8z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+            <path d="M24 31v9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M16 40h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M18 14h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <h3>Čišćenje i nega kože</h3>
+          <p>Da koža diše, ostane meka i traje. Za cipele, čizme, tašne i kaiševe.</p>
+          <ul>
+            <li>Dubinsko čišćenje i uklanjanje fleka soli</li>
+            <li>Farbanje i osvežavanje boje kože</li>
+            <li>Hranjenje kremom i poliranje do sjaja</li>
+            <li>Impregnacija protiv vode i vlage</li>
+            <li>Nega tašni, kaiševa i kožne galanterije</li>
+          </ul>
+        </article>
+        <article class="svc">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M6 20h30a6 6 0 016 6v0a6 6 0 01-6 6H6z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+            <rect x="6" y="20" width="9" height="12" rx="1.5" stroke="currentColor" stroke-width="2.4"/>
+            <circle cx="40" cy="26" r="2" fill="currentColor"/>
+            <path d="M22 24v4M28 24v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <h3>Prodaja kaiševa</h3>
+          <p>Kožni kaiševi izrađeni da traju — za svaki dan i za svečane prilike.</p>
+          <ul>
+            <li>Muški i ženski kožni kaiševi</li>
+            <li>Više boja i širina na izbor</li>
+            <li>Skraćivanje na vašu meru na licu mesta</li>
+            <li>Zamena kopče i izrada novih rupa</li>
+          </ul>
+        </article>
+      </div>
+      <div class="note">
+        <strong>Napomena za vlasnika:</strong> broj telefona, Viber i radno vreme na ovoj strani su još uvek primeri. Pošaljite mi tačne podatke pa ću ih odmah zameniti.
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCES -->
+  <section id="proces">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Kako radimo</span>
+        <h2>Od praga do gotove cipele</h2>
+        <p>Jednostavno i bez čekanja u neizvesnosti — uvek znate šta se radi i koliko traje.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">KORAK 01</span>
+          <h3>Donesete obuću</h3>
+          <p>Svratite u radnju sa parom koji vas muči. Bez zakazivanja za procenu.</p>
+        </div>
+        <div class="step">
+          <span class="num">KORAK 02</span>
+          <h3>Procena i cena</h3>
+          <p>Odmah pogledamo šta treba i kažemo tačnu cenu i rok. Bez skrivenih troškova.</p>
+        </div>
+        <div class="step">
+          <span class="num">KORAK 03</span>
+          <h3>Ručna popravka</h3>
+          <p>Radimo pažljivo, materijalima koji drže — konac, koža i lepak za obuću.</p>
+        </div>
+        <div class="step">
+          <span class="num">KORAK 04</span>
+          <h3>Preuzimanje</h3>
+          <p>Javimo se kad je gotovo. Većina popravki bude spremna za 1–3 dana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZANAT -->
+  <section id="zanat">
+    <div class="wrap craft">
+      <div class="craft-figure" role="img" aria-label="Obućarski alat — šilo, konac i čekić">
+        <svg viewBox="0 0 300 300" fill="none" aria-hidden="true">
+          <g stroke="#e2bd77" stroke-width="2.2" stroke-linecap="round">
+            <!-- awl -->
+            <path d="M70 230l70-70"/>
+            <path d="M138 158l14-14 10 10-14 14z" fill="#f4ece0" stroke="#f4ece0"/>
+            <path d="M158 138l16-16" stroke-width="6"/>
+            <!-- thread spool -->
+            <ellipse cx="210" cy="120" rx="26" ry="12"/>
+            <path d="M184 120v40M236 120v40"/>
+            <ellipse cx="210" cy="160" rx="26" ry="12"/>
+            <path d="M198 132c8 6 16 6 24 0" stroke-width="1.4"/>
+            <path d="M198 146c8 6 16 6 24 0" stroke-width="1.4"/>
+            <!-- stitch line -->
+            <path d="M60 250h180" stroke-dasharray="4 10" opacity=".6"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <span class="kicker" style="color:var(--brass);font-weight:600;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;">Naš zanat</span>
+        <h2 style="margin-top:12px">Popravka je jeftinija — i lepša — od bacanja</h2>
+        <p>Dobra cipela nije za jednu sezonu. Umesto da kupite novu, često je dovoljan nov đon ili malo nege pa da par izgleda i traje kao nekad. Tako čuvate i novac i par koji ste zavoleli.</p>
+        <p>Za tezgom su majstori <strong style="color:var(--ink)">Nebojša</strong> i <strong style="color:var(--ink)">Milorad</strong> — radimo strpljivo, kao što se ovaj zanat i uči, sa poštovanjem prema svakom paru koji uđe na vrata.</p>
+        <div class="facts">
+          <div class="fact"><div class="n">25+</div><div class="l">godina iskustva</div></div>
+          <div class="fact"><div class="n">1–3</div><div class="l">dana za popravku</div></div>
+          <div class="fact"><div class="n">100%</div><div class="l">ručni rad</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UTISCI -->
+  <section id="utisci">
+    <div class="wrap">
+      <div class="sec-head row">
+        <div>
+          <span class="kicker">Utisci</span>
+          <h2>Šta kažu naše mušterije</h2>
+          <p>Najlepše nam je kad se ljudi vrate — i kad nas preporuče. Evo šta kažu oni koji su nam poverili svoju obuću.</p>
+        </div>
+        <a class="all-link" href="utisci.html">Svi utisci
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="rev-grid">
+        <article class="rev">
+          <div class="stars" aria-label="5 od 5 zvezdica">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+          </div>
+          <blockquote>„Odnela sam čizme kojima se potpuno odlepio đon — vratili su ih kao nove za dva dana. Preporučujem svima."</blockquote>
+          <div class="who">
+            <span class="avatar">MJ</span>
+            <span><span class="nm">Marija Jovanović</span><br><span class="mt">Ćuprija</span></span>
+          </div>
+        </article>
+        <article class="rev">
+          <div class="stars" aria-label="5 od 5 zvezdica">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+          </div>
+          <blockquote>„Majstori znaju svoj posao. Zamenili su potpetice na omiljenim cipelama i još ih ulepšali. Poštena cena."</blockquote>
+          <div class="who">
+            <span class="avatar">SP</span>
+            <span><span class="nm">Stefan Petrović</span><br><span class="mt">Paraćin</span></span>
+          </div>
+        </article>
+        <article class="rev">
+          <div class="stars" aria-label="5 od 5 zvezdica">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+          </div>
+          <blockquote>„Kupio sam kožni kaiš i odmah mi ga skratili na meru. Kvalitet se oseti — drži već godinu dana bez problema."</blockquote>
+          <div class="who">
+            <span class="avatar">DN</span>
+            <span><span class="nm">Dragan Nikolić</span><br><span class="mt">Ćuprija</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Dođite kod nas</span>
+        <h2>Radnja i radno vreme</h2>
+        <p>Nalazimo se u centru Ćuprije. Svratite bez najave ili nas pozovite pre dolaska.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="info-card">
+          <h3>Kontakt</h3>
+          <div class="info-row">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+            <div>
+              <div class="k">Adresa</div>
+              <div class="v">Anđe Ranković 9, 35230 Ćuprija</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C11 24 0 13 0 4c0-1 1-2 2-2" transform="translate(2 0)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <div>
+              <div class="k">Telefon</div>
+              <div class="v" id="tel">035 / 123-456</div>
+            </div>
+            <button class="copybtn" data-copy="035 123 456" aria-label="Kopiraj broj telefona">Kopiraj</button>
+          </div>
+          <div class="info-row">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v13H4z" stroke="currentColor" stroke-width="2"/><path d="M4 9h16" stroke="currentColor" stroke-width="2"/></svg>
+            <div>
+              <div class="k">Viber / poruke</div>
+              <div class="v" id="vib">064 / 123-4567</div>
+            </div>
+            <button class="copybtn" data-copy="064 123 4567" aria-label="Kopiraj Viber broj">Kopiraj</button>
+          </div>
+          <div class="info-row">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div>
+              <div class="k">Majstori</div>
+              <div class="v">Nebojša i Milorad</div>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <h3>Radno vreme</h3>
+          <div class="hours" id="hours">
+            <div class="hr" data-day="1"><span class="day">Ponedeljak</span><span>08:00 – 17:00</span></div>
+            <div class="hr" data-day="2"><span class="day">Utorak</span><span>08:00 – 17:00</span></div>
+            <div class="hr" data-day="3"><span class="day">Sreda</span><span>08:00 – 17:00</span></div>
+            <div class="hr" data-day="4"><span class="day">Četvrtak</span><span>08:00 – 17:00</span></div>
+            <div class="hr" data-day="5"><span class="day">Petak</span><span>08:00 – 17:00</span></div>
+            <div class="hr" data-day="6"><span class="day">Subota</span><span>08:00 – 13:00</span></div>
+            <div class="hr" data-day="0"><span class="day">Nedelja</span><span class="closed">Neradni dan</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap frow">
+    <div>
+      <div class="brand-name" style="font-family:'Fraunces',serif;font-weight:700;font-size:19px;">Obućarska radnja Čekić</div>
+      <div class="fnote" style="margin-top:6px">Majstori Nebojša i Milorad · Ćuprija</div>
+    </div>
+    <div class="fnote">© <span id="yr">2026</span> · Sva prava zadržana · Anđe Ranković 9, Ćuprija</div>
+  </div>
+</footer>
+
+<script>
+  // godina
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // istakni današnji dan
+  (function () {
+    var today = new Date().getDay(); // 0 = nedelja
+    var row = document.querySelector('#hours .hr[data-day="' + today + '"]');
+    if (row) row.classList.add("today");
+  })();
+
+  // kopiranje broja
+  document.querySelectorAll(".copybtn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var txt = b.getAttribute("data-copy");
+      var done = function () {
+        var old = b.textContent;
+        b.textContent = "Kopirano ✓";
+        setTimeout(function () { b.textContent = old; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done).catch(function () { fallback(txt); done(); });
+      } else { fallback(txt); done(); }
+    });
+  });
+  function fallback(txt) {
+    try {
+      var t = document.createElement("textarea");
+      t.value = txt; document.body.appendChild(t); t.select();
+      document.execCommand("copy"); document.body.removeChild(t);
+    } catch (e) {}
+  }
+
+  // meko skrolovanje
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var id = a.getAttribute("href");
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    });
+  });
+</script>
+</body>
+</html>

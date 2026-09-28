@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Utisci — Obućarska radnja Čekić</title>
+<meta name="description" content="Utisci mušterija obućarske radnje Čekić u Ćupriji.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #f4ece0;
+    --paper-2: #ece0cf;
+    --card: #fbf6ee;
+    --ink: #2c2016;
+    --ink-soft: #5f4c3a;
+    --leather: #7c4a24;
+    --leather-deep: #5c3418;
+    --brass: #a9803f;
+    --brass-bright: #c39a54;
+    --oxblood: #6e332a;
+    --line: #d9c8b2;
+    --shadow: 44 32 22;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1c1611; --paper-2: #241b13; --card: #251c14;
+      --ink: #f1e6d6; --ink-soft: #c3ac92;
+      --leather: #c98a4f; --leather-deep: #b3743a;
+      --brass: #cfa159; --brass-bright: #e2bd77; --oxblood: #c56a55;
+      --line: #3c2d20; --shadow: 0 0 0; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1c1611; --paper-2: #241b13; --card: #251c14;
+    --ink: #f1e6d6; --ink-soft: #c3ac92;
+    --leather: #c98a4f; --leather-deep: #b3743a;
+    --brass: #cfa159; --brass-bright: #e2bd77; --oxblood: #c56a55;
+    --line: #3c2d20; --shadow: 0 0 0; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.1; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 22px; }
+
+  header.site {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+  }
+  .navrow { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand .awl { width: 34px; height: 34px; flex: none; }
+  .brand-name { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; color: var(--ink); line-height: 1; }
+  .back {
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none; font-weight: 600; font-size: 14.5px;
+    color: var(--leather);
+  }
+  .back svg { width: 18px; height: 18px; }
+
+  .hero-strip {
+    background: var(--paper-2); border-bottom: 1px solid var(--line);
+    padding-block: 54px 46px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--brass); font-weight: 600; margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--brass); }
+  .hero-strip h1 { font-size: clamp(34px, 6vw, 52px); letter-spacing: -0.015em; }
+  .hero-strip p { margin-top: 16px; color: var(--ink-soft); font-size: 18px; max-width: 52ch; }
+  .rating-line {
+    margin-top: 22px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .rating-line .stars { display: flex; gap: 3px; color: var(--brass); }
+  .rating-line .stars svg { width: 20px; height: 20px; }
+  .rating-line .score { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; }
+  .rating-line .count { color: var(--ink-soft); font-size: 15px; }
+
+  main { padding-block: 50px 60px; }
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .rev {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 28px 26px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .stars { display: flex; gap: 3px; color: var(--brass); }
+  .stars svg { width: 18px; height: 18px; }
+  .rev blockquote { margin: 0; font-family: "Fraunces", serif; font-size: 18px; line-height: 1.5; color: var(--ink); }
+  .rev .who { margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px; }
+  .avatar {
+    width: 42px; height: 42px; flex: none; border-radius: 50%;
+    background: var(--leather); color: #fbf6ee;
+    display: grid; place-items: center;
+    font-family: "Fraunces", serif; font-weight: 700; font-size: 17px;
+  }
+  :root:not([data-theme="light"]) .avatar, :root[data-theme="dark"] .avatar { color: #1c1611; }
+  .who .nm { font-weight: 600; font-size: 15.5px; }
+  .who .mt { font-size: 13px; color: var(--ink-soft); }
+  .tag {
+    align-self: flex-start;
+    font-size: 12px; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--brass); font-weight: 600;
+    border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px;
+  }
+  @media (max-width: 860px) { .rev-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .rev-grid { grid-template-columns: 1fr; } }
+
+  .cta-strip {
+    margin-top: 46px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 32px 30px; text-align: center;
+  }
+  .cta-strip h2 { font-size: clamp(24px, 4vw, 32px); }
+  .cta-strip p { margin-top: 12px; color: var(--ink-soft); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+    background: var(--leather); color: #fbf6ee; text-decoration: none;
+    font-weight: 600; font-size: 15px; padding: 11px 22px; border-radius: 999px;
+  }
+  :root:not([data-theme="light"]) .btn, :root[data-theme="dark"] .btn { color: #1c1611; }
+  .btn:hover { background: var(--leather-deep); }
+
+  .note {
+    margin-top: 40px;
+    background: color-mix(in srgb, var(--brass) 16%, var(--card));
+    border: 1px dashed var(--brass); border-radius: 10px;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink-soft);
+  }
+  .note strong { color: var(--ink); }
+
+  footer.site { background: var(--leather-deep); color: #eaddc9; padding-block: 40px; border-top: 1px solid var(--line); }
+  :root:not([data-theme="light"]) footer.site, :root[data-theme="dark"] footer.site { background: #150f0a; }
+  footer .frow { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  footer .fnote { font-size: 13.5px; opacity: .82; }
+  footer a { color: #eaddc9; }
+  :focus-visible { outline: 2px solid var(--leather); outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap navrow">
+    <a class="brand" href="index.html" aria-label="Obućarska radnja Čekić — početna">
+      <svg class="awl" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="var(--leather)"/>
+        <path d="M13 27c3-9 7-14 14-16" stroke="var(--brass-bright)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 28l3-3 2 2-3 3-3 1z" fill="#fbf6ee"/>
+        <circle cx="26.5" cy="11.5" r="1.6" fill="#fbf6ee"/>
+      </svg>
+      <span class="brand-name">Obućarska radnja Čekić</span>
+    </a>
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Nazad na početnu
+    </a>
+  </div>
+</header>
+
+<section class="hero-strip">
+  <div class="wrap">
+    <span class="eyebrow">Utisci mušterija</span>
+    <h1>Svi utisci</h1>
+    <p>Zahvalni smo na svakoj lepoj reči i preporuci. Evo šta o nama kažu ljudi kojima smo popravili obuću ili prodali kaiš.</p>
+    <div class="rating-line">
+      <span class="stars" aria-label="Prosečna ocena 4,9 od 5">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>
+      </span>
+      <span class="score">4,9 / 5</span>
+      <span class="count">na osnovu 38 utisaka</span>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <div class="rev-grid" id="grid"></div>
+
+    <div class="cta-strip">
+      <h2>Zadovoljni ste popravkom?</h2>
+      <p>Vaša preporuka nam mnogo znači. Svratite ponovo ili nas preporučite komšijama i prijateljima.</p>
+      <a class="btn" href="index.html#kontakt">Kontakt i radno vreme</a>
+    </div>
+
+    <div class="note">
+      <strong>Napomena za vlasnika:</strong> ovi utisci su primeri kako bi izgledali na sajtu. Pošaljite mi prave utiske mušterija (ime, mesto i tekst) pa ću ih uneti.
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap frow">
+    <div>
+      <div class="brand-name" style="color:#fbf6ee;font-size:19px;">Obućarska radnja Čekić</div>
+      <div class="fnote" style="margin-top:6px">Majstori Nebojša i Milorad · Ćuprija</div>
+    </div>
+    <div class="fnote">© <span id="yr">2026</span> · Anđe Ranković 9, Ćuprija · <a href="index.html">Početna</a></div>
+  </div>
+</footer>
+
+<script>
+  var star = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg>';
+  var reviews = [
+    { t: "Odnela sam čizme kojima se potpuno odlepio đon — vratili su ih kao nove za dva dana. Preporučujem svima.", n: "Marija Jovanović", m: "Ćuprija", tag: "Popravka obuće", s: 5 },
+    { t: "Majstori znaju svoj posao. Zamenili su potpetice na omiljenim cipelama i još ih ulepšali. Poštena cena.", n: "Stefan Petrović", m: "Paraćin", tag: "Potpetice", s: 5 },
+    { t: "Kupio sam kožni kaiš i odmah mi ga skratili na meru. Kvalitet se oseti — drži već godinu dana bez problema.", n: "Dragan Nikolić", m: "Ćuprija", tag: "Prodaja kaiševa", s: 5 },
+    { t: "Stare kožne cipele mog oca su izgledale za bacanje. Očistili su ih i ofarbali, sad ih nosim sa ponosom.", n: "Ivana Milić", m: "Jagodina", tag: "Nega kože", s: 5 },
+    { t: "Brzo, ljubazno i temeljno. Prošili su mi rasparanu tašnu i zamenili rajsferšlus na jakni. Sve pohvale.", n: "Nenad Stojanović", m: "Ćuprija", tag: "Sitne popravke", s: 5 },
+    { t: "Impregnirali su mi nove patike pred zimu — kiša i so im više ništa ne mogu. Vredelo je.", n: "Ana Ristić", m: "Ćuprija", tag: "Impregnacija", s: 5 },
+    { t: "Jedina radnja gde još rade pravi zanat. Čekić na cipele stavlja kao nekad, ručno i pošteno.", n: "Milan Đorđević", m: "Senje", tag: "Popravka obuće", s: 5 },
+    { t: "Kupila sam kaiš za muža za rođendan — lep model, dobra koža i ljubazna usluga. Vratiću se.", n: "Jelena Pavlović", m: "Paraćin", tag: "Prodaja kaiševa", s: 5 },
+    { t: "Potpetice na štiklama su mi se stalno lomile. Ovde su stavili kvalitetne flekove i problem je rešen.", n: "Sandra Ilić", m: "Ćuprija", tag: "Potpetice", s: 4 },
+    { t: "Doneo sam čizme za jahanje na sređivanje. Očistili, nahranili kožu i podmazali — kao fabričke.", n: "Vladimir Marković", m: "Batočina", tag: "Nega kože", s: 5 },
+    { t: "Uvek objasne šta treba i koliko košta pre nego što počnu. Bez iznenađenja na kraju. Preporuka.", n: "Tijana Lazić", m: "Ćuprija", tag: "Usluga", s: 5 },
+    { t: "Zamenili su đon na radnim cipelama koje nosim svaki dan. Drži već mesecima, izdržljivo i udobno.", n: "Goran Simić", m: "Jagodina", tag: "Zamena đona", s: 5 }
+  ];
+  var grid = document.getElementById("grid");
+  reviews.forEach(function (r) {
+    var stars = "";
+    for (var i = 0; i < 5; i++) stars += (i < r.s) ? star : star.replace('fill="currentColor"', 'fill="currentColor" opacity=".25"');
+    var initials = r.n.split(" ").map(function (w) { return w[0]; }).join("").slice(0, 2).toUpperCase();
+    var el = document.createElement("article");
+    el.className = "rev";
+    el.innerHTML =
+      '<span class="tag">' + r.tag + '</span>' +
+      '<div class="stars" aria-label="' + r.s + ' od 5 zvezdica">' + stars + '</div>' +
+      '<blockquote>„' + r.t + '"</blockquote>' +
+      '<div class="who"><span class="avatar">' + initials + '</span>' +
+      '<span><span class="nm">' + r.n + '</span><br><span class="mt">' + r.m + '</span></span></div>';
+    grid.appendChild(el);
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
